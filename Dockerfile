@@ -49,5 +49,7 @@ RUN  apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
 RUN  Rscript -e "install.packages('devtools',lib='/usr/local/lib/R/site-library',dependencies=T)"
 RUN  Rscript -e "library(devtools); install_github('mar-esther23/boolnet-perturb')"
 RUN  Rscript -e "install.packages('devtools',lib='/usr/local/lib/R/site-library',dependencies=T)"
-RUN  Rscript -e "install.packages(c('tidyverse','dplyr','formatR','remotes','selectr','caTools','biocManager'),lib='/usr/local/lib/R/site-library',dependencies=T)"
+RUN  Rscript -e "install.packages(c('tidyverse','dplyr','formatR'),lib='/usr/local/lib/R/site-library',dependencies=T)"
+RUN  Rscript -e "install.packages(c('remotes','selectr','caTools','biocManager'),lib='/usr/local/lib/R/site-library',dependencies=T)"
+RUN  Rscript -e "install.packages(c('dendextend','dendextendRcpp'),lib='/usr/local/lib/R/site-library',dependencies=T)"
 
