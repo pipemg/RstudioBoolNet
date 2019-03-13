@@ -18,18 +18,23 @@ RUN  apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
     xfonts-base \
     libglib2.0-0  \
     libglib2.0-bin  \
+    libglib2.0-dev \
     libpango-1.0-0  \
     libxml2-dev \
-    libglib2.0-dev \
+    libsqlite3-dev \
+    libmariadbd-dev \
+    libmariadb-client-lgpl-dev \
     libgdk-pixbuf2.0-dev \
     libatk1.0-dev \
     libssl1.0.0  \
     libpangocairo-1.0-0 \
     libcairo2  \
+    libpq-dev \
     libcairo2-dev \ 
     fonts-dejavu \
     gfortran \
     libssh2-1-dev \
+    unixodbc-dev \
     r-cran-xml \
     r-cran-plyr \ 
     r-cran-ggplot2 \
@@ -43,3 +48,6 @@ RUN  apt-get install -y --no-install-recommends libpangoft2-1.0-0  \
     
 RUN  Rscript -e "install.packages('devtools',lib='/usr/local/lib/R/site-library',dependencies=T)"
 RUN  Rscript -e "library(devtools); install_github('mar-esther23/boolnet-perturb')"
+RUN  Rscript -e "install.packages('devtools',lib='/usr/local/lib/R/site-library',dependencies=T)"
+RUN  Rscript -e "install.packages(c('tidyverse','dplyr','formatR','remotes','selectr','caTools','biocManager'),lib='/usr/local/lib/R/site-library',dependencies=T)"
+
